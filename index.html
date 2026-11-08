@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plate Hunter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🚗 Plate Hunter</h1>
+    <p class="tagline">Spot licence plates from every state. Collect them all!</p>
+  </header>
+
+  <main>
+    <section class="progress-card">
+      <div class="progress-text">
+        <span id="count">0</span> / <span id="total">51</span> plates collected
+      </div>
+      <div class="bar"><div class="bar-fill" id="bar-fill"></div></div>
+      <div class="rank" id="rank">Rank: Rookie Spotter</div>
+    </section>
+
+    <section class="search-card">
+      <label for="search" class="label">Spotted a plate? Search for the state:</label>
+      <div class="search-wrap">
+        <input id="search" type="text" autocomplete="off" placeholder="Type a state name or code, e.g. Texas or TX" aria-autocomplete="list" aria-controls="suggestions">
+        <button id="add-btn" type="button">Add</button>
+      </div>
+      <ul id="suggestions" class="suggestions" role="listbox"></ul>
+      <div id="message" class="message" aria-live="polite"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Your Collection</h2>
+        <div class="tabs">
+          <button class="tab active" data-view="collected">Collected</button>
+          <button class="tab" data-view="missing">Still Missing</button>
+        </div>
+      </div>
+      <div id="plates" class="plates"></div>
+      <p id="empty" class="empty">No plates yet. Go look out the window! 👀</p>
+    </section>
+
+    <div class="footer-actions">
+      <button id="reset-btn" class="danger" type="button">Reset game</button>
+    </div>
+  </main>
+
+  <div id="celebrate" class="celebrate hidden">
+    <div class="celebrate-box">
+      <h2>🏆 You collected ALL of them!</h2>
+      <p>Every state plus D.C. Legendary spotter status unlocked.</p>
+      <button id="close-celebrate" type="button">Nice!</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
