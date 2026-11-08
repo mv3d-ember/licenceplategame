@@ -107,3 +107,50 @@ button:hover { filter: brightness(1.1); }
 .celebrate-box { background: var(--card); padding: 28px; border-radius: 16px; text-align: center; max-width: 420px; }
 
 @media (hover: none) { .plate .remove { opacity: 1; } }
+
+/* ---------- Players ---------- */
+:root { --p1: #38bdf8; --p2: #f97316; }
+.card { background: var(--card); border-radius: 14px; padding: 18px; margin-bottom: 16px; }
+.mode-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.label.inline { display: inline; margin: 0; }
+.players-area { margin-top: 12px; }
+.players-area.hidden { display: none; }
+.hint { color: var(--muted); font-size: .9rem; margin: 6px 0 10px; }
+.players { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.player {
+  border: 3px solid #334155; border-radius: 12px; padding: 10px 12px; cursor: pointer;
+  display: flex; flex-direction: column; gap: 6px; transition: border-color .2s, transform .1s;
+}
+.player.active { border-color: var(--pc); background: color-mix(in srgb, var(--pc) 14%, transparent); }
+.player:active { transform: scale(.98); }
+.player input {
+  font: inherit; font-weight: 700; color: var(--pc); background: transparent;
+  border: none; border-bottom: 1px dashed #475569; outline: none; width: 100%; padding: 2px 0;
+}
+.player .score { font-size: 1.8rem; font-weight: 900; }
+.player .score small { font-size: .85rem; font-weight: 600; color: var(--muted); }
+.player .spotting { font-size: .8rem; font-weight: 700; color: var(--pc); visibility: hidden; }
+.player.active .spotting { visibility: visible; }
+.player.leader .score::after { content: " 👑"; font-size: 1.2rem; }
+
+/* ---------- Map ---------- */
+.map {
+  display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px;
+  margin-top: 12px; max-width: 640px; margin-left: auto; margin-right: auto;
+}
+.tile {
+  aspect-ratio: 1; border-radius: 6px; padding: 0; background: #334155; color: var(--muted);
+  font-size: clamp(.55rem, 2.2vw, .9rem); font-weight: 800; display: flex;
+  align-items: center; justify-content: center; transition: background .3s, transform .2s;
+}
+.tile:hover { transform: scale(1.08); filter: none; }
+.tile.got { background: var(--tc); color: #0b1220; cursor: default; }
+.tile.flash { animation: flash .6s ease; }
+@keyframes flash { 0% { transform: scale(1.5); } 100% { transform: scale(1); } }
+.legend { display: flex; gap: 12px; font-size: .85rem; color: var(--muted); flex-wrap: wrap; }
+.legend span::before {
+  content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 3px;
+  background: var(--lc); margin-right: 5px; vertical-align: -1px;
+}
+.plate .by { font-size: .7rem; font-weight: 800; color: var(--pc); }
+.plate.owned { border-color: var(--pc); }

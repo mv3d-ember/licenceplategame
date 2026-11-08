@@ -8,3 +8,5 @@ A licence plate spotting game. When you see a plate from a US state (or D.C.), t
 - Check the **Still Missing** tab to see what's left (you can click a missing plate to add it).
 - Hover a plate and click ✕ to remove it if you made a mistake.
 - Your progress is saved in your browser automatically.
+- **Map:** states light up on the map as you collect them. Tap a grey state to add it.
+- **2 Players:** switch to *2 Players*, type your names, and tap your box before adding a plate. First to spot a state claims it, and whoever has the most when all 51 are found wins. 👑 marks who's in the lead.

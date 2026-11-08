@@ -21,6 +21,20 @@
       <div class="rank" id="rank">Rank: Rookie Spotter</div>
     </section>
 
+    <section class="card players-card">
+      <div class="mode-row">
+        <span class="label inline">Players:</span>
+        <div class="tabs" id="mode-toggle">
+          <button class="tab" data-mode="1" type="button">1 Player</button>
+          <button class="tab" data-mode="2" type="button">2 Players</button>
+        </div>
+      </div>
+      <div id="players-area" class="players-area">
+        <p class="hint">Who spotted it? Tap your box before adding a plate. First to spot a state claims it!</p>
+        <div id="players" class="players"></div>
+      </div>
+    </section>
+
     <section class="search-card">
       <label for="search" class="label">Spotted a plate? Search for the state:</label>
       <div class="search-wrap">
@@ -29,6 +43,15 @@
       </div>
       <ul id="suggestions" class="suggestions" role="listbox"></ul>
       <div id="message" class="message" aria-live="polite"></div>
+    </section>
+
+    <section class="card map-card">
+      <div class="section-head">
+        <h2>Map</h2>
+        <div id="legend" class="legend"></div>
+      </div>
+      <div id="map" class="map" aria-label="Map of states"></div>
+      <p class="hint">Tap a grey state to add it.</p>
     </section>
 
     <section>
@@ -51,7 +74,7 @@
   <div id="celebrate" class="celebrate hidden">
     <div class="celebrate-box">
       <h2>🏆 You collected ALL of them!</h2>
-      <p>Every state plus D.C. Legendary spotter status unlocked.</p>
+      <p id="celebrate-text">Every state plus D.C. Legendary spotter status unlocked.</p>
       <button id="close-celebrate" type="button">Nice!</button>
     </div>
   </div>
